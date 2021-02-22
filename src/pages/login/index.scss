@@ -1,0 +1,33 @@
+.login{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../assets/imgs/gd.jpg);
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    .login-logo{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 100px;
+        height: 100px;
+        background-image: url(../../assets/imgs/fe-logo.png);
+        background-size: cover;
+
+    }
+    .login-content{
+        width: 400px;
+        height: 300px;
+        border: 1px solid white;
+        margin-top: 40vh;
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+        background-color: white;
+        // align-items: center;
+    }
+    .login-form{
+        width:100%;
+    }
+}

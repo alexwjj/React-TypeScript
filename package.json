@@ -55,6 +55,7 @@
     "react-dev-utils": "^11.0.2",
     "react-dom": "^17.0.1",
     "react-refresh": "^0.8.3",
+    "react-scripts": "^4.0.2",
     "resolve": "1.18.1",
     "resolve-url-loader": "^3.1.2",
     "sass-loader": "^10.0.5",
@@ -95,6 +96,7 @@
   },
   "devDependencies": {
     "babel-plugin-zent": "^2.2.2",
+    "node-sass": "^5.0.0",
     "react-app-rewired": "^2.1.8",
     "react-router-dom": "^5.2.0"
   },
