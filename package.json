@@ -13,9 +13,9 @@
     "zent": "^9.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -37,6 +37,7 @@
     ]
   },
   "devDependencies": {
-    "babel-plugin-zent": "^2.2.2"
+    "babel-plugin-zent": "^2.2.2",
+    "react-app-rewired": "^2.1.8"
   }
 }

@@ -6,7 +6,10 @@ import 'zent/css/index.css';
 
 function App() {
   return (
-    <Button type="primary">实心按钮</Button>
+    <div >
+      <Button type="primary">实心按钮</Button>
+      <Button type="primary">实心按钮</Button>
+    </div>
   );
 }
 
