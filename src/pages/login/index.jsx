@@ -28,7 +28,9 @@ function Login() {
 	let history = useHistory();
 
   const handleClick = () => {
-    console.log("login");
+    console.log(form.getValue(),"form");
+    const user = form.getValue()
+    localStorage.setItem('user', JSON.parse(JSON.stringify(user)));
     history.push("/home");
   };
   return (
