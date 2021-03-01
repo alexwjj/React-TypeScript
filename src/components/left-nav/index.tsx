@@ -13,7 +13,7 @@ import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
 import { Menu } from 'antd';
 import { menuList, MenuConfig } from '../../config/menuConfig';
 import * as Icon from '@ant-design/icons';
-import { LoginUser } from '../../utils/StorageUtils';
+// import { LoginUser } from '../../utils/StorageUtils';
 import { connect } from 'react-redux';
 import { RootState } from 'typesafe-actions';
 import { setHeadTitle } from '../../redux/actions';
@@ -44,15 +44,16 @@ class LeftNav extends Component<LeftNavProps, {}> {
 	};
 
 	private hasAuth = (node: MenuConfig): boolean => {
-    const user: LoginUser = this.props.user;
-		if (user.name === 'admin' || node.isPublic || (user.menus??[]).indexOf(node.key) !== -1) {
-			return true;
-		} else if (node.children) {
-			return !!node.children.find((child) => {
-				return (user.menus??[]).indexOf(child.key) !== -1;
-			});
-		}
-		return false;
+    // const user: LoginUser = this.props.user;
+		// if (user.name === 'admin' || node.isPublic || (user.menus??[]).indexOf(node.key) !== -1) {
+		// 	return true;
+		// } else if (node.children) {
+		// 	return !!node.children.find((child) => {
+		// 		return (user.menus??[]).indexOf(child.key) !== -1;
+		// 	});
+		// }
+		// 权限全部放开
+		return true;
 	};
 
 	getMenuNodes = (menuList: MenuConfig[]): JSX.Element[] | null => {
@@ -109,7 +110,7 @@ class LeftNav extends Component<LeftNavProps, {}> {
 			<div className="left-nav">
 				<Link to="/" className="left-nav-header">
 					<img src={logo} alt="" />
-					<h1>硅谷后台</h1>
+					<h1>俊劫HIS系统</h1>
 				</Link>
 				<div>
 					<Menu selectedKeys={[path]} defaultOpenKeys={[this.openKey]} mode="inline" theme="dark">

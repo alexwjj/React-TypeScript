@@ -9,7 +9,7 @@
 import { Modal } from 'antd';
 import React, { Component } from 'react';
 import { RouteComponentProps, withRouter } from 'react-router';
-import { reqWheater } from '../../api';
+// import { reqWheater } from '../../api';
 import { formatDate } from '../../utils/DateUtils';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import './index.less';
@@ -26,7 +26,12 @@ const mapStateToProps = (state: RootState) => ({
 const mapDispatchToProps = {
 	logout
 };
+// interface userSession {
+// 	name?: string;
+// 	password?: string;
+// }
 
+const userSession: any = JSON.parse(sessionStorage.getItem('user') || '{}');
 interface HeaderState {
 	currentTime: string;
 	dayPictureUrl: string;
@@ -38,7 +43,6 @@ type HeaderProps = RouteComponentProps & ReturnType<typeof mapStateToProps> & ty
 class Header extends Component<HeaderProps, HeaderState> {
 	timerId: NodeJS.Timeout | null = null;
 	user = this.props.user;
-
 	constructor(props: HeaderProps) {
 		super(props);
 		this.state = {
@@ -50,16 +54,16 @@ class Header extends Component<HeaderProps, HeaderState> {
 
 	componentDidMount() {
 		this.getNowTime();
-		this.getWeather();
+		// this.getWeather();
 	}
 
-	private async getWeather() {
-		const { dayPictureUrl, weather } = await reqWheater('常州');
-		this.setState({
-			dayPictureUrl,
-			weather,
-		});
-	}
+	// private async getWeather() {
+	// 	const { dayPictureUrl, weather } = await reqWheater('常州');
+	// 	this.setState({
+	// 		dayPictureUrl,
+	// 		weather,
+	// 	});
+	// }
 
 	private getNowTime() {
 		this.timerId = setInterval(() => {
@@ -81,7 +85,9 @@ class Header extends Component<HeaderProps, HeaderState> {
 			okText: '确认',
 			cancelText: '取消',
 			onOk: () => {
-				this.props.logout();
+				// this.props.logout();
+				sessionStorage.removeItem('user')
+				this.props.history.push('/')
 			},
 			onCancel: () => {
 				console.log('cancel');
@@ -90,20 +96,21 @@ class Header extends Component<HeaderProps, HeaderState> {
 	}
 
 	render() {
+		
 		return (
 			<div className="header">
 				<div className="header-top">
-					<span>欢迎，{this.user.name}</span>
+					<span>欢迎，{userSession ? userSession.name : ''}</span>
 					<LinkButton onClick={this.logout.bind(this)}>退出</LinkButton>
 				</div>
-				<div className="header-bottom">
+				{/* <div className="header-bottom">
 					<div className="header-bottom-left">{this.props.headTitle}</div>
 					<div className="header-bottom-right">
 						<span>{this.state.currentTime}</span>
 						<img src={this.state.dayPictureUrl} alt="weather"></img>
 						<span>{this.state.weather}</span>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		);
 	}

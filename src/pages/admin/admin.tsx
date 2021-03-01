@@ -39,7 +39,7 @@ class admin extends Component<IProps, {}> {
 				</Sider>
 				<Layout>
 					<Header></Header>
-					<Content style={{ backgroundColor: '#fff', margin: '20px' }}>
+					<Content style={{ backgroundColor: '#fff', margin: '12px 0 0 12px' }}>
 						<Switch>
 							<Redirect exact={true} from="/" to="/home"></Redirect>
 							<Route path="/home" component={Home}></Route>
@@ -54,7 +54,7 @@ class admin extends Component<IProps, {}> {
 						</Switch>
 					</Content>
 					<Footer style={{ textAlign: 'center', color: '#cccccc' }}>
-						推荐使用谷歌浏览器，可以获得最佳页面操作体验
+						十年医院his系统架构师，专业搬砖，值得信赖
 					</Footer>
 				</Layout>
 			</Layout>

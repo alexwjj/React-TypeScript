@@ -9,8 +9,9 @@ import {
   Pop,
   Icon,
   Button,
+  Notify
 } from "zent";
-import imgURL from "../../assets/images/logo.png";
+// import imgURL from "../../assets/images/logo.png";
 
 function Login() {
   const form = Form.useForm(FormStrategy.View);
@@ -30,8 +31,13 @@ function Login() {
   const handleClick = () => {
     console.log(form.getValue(),"form");
     const user = form.getValue()
-    sessionStorage.setItem('user', JSON.parse(JSON.stringify(user)));
-    history.push("/home");
+    if(user.name === "alexwjj") {
+      sessionStorage.setItem('user', JSON.stringify(user));
+      history.push("/home");
+    } else {
+      Notify.warn('账号错误，请点击账号填充！')
+    }
+    
   };
   return (
     <div className="login">
@@ -39,12 +45,13 @@ function Login() {
       <div className="login-content">
         {/* <img src={require('../../assets/imgs/fe-logo.png')} alt="logo"  /> */}
         <Form layout="horizontal" form={form} className="login-form">
-          <div style={{ textAlign: "center" }}>
-            <img
+          <div className="login-form-title">
+            {/* <img
               src={imgURL}
               alt="logo"
               style={{ width: "50px", height: "50px" }}
-            />
+            /> */}
+            医院his管理系统
           </div>
           <FormInputField
             name="name"
@@ -80,7 +87,7 @@ function Login() {
           />
           <div style={{ textAlign: "center" }}>
             <Button type="primary" onClick={initialize} loading={initializing}>
-              填充
+              账号
             </Button>
             <Button type="primary" onClick={handleClick}>
               登录
