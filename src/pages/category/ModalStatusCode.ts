@@ -1,9 +1,9 @@
 /*
  * @Descripttion: 
  * @version: 
- * @Author: MFine
+ * @Author: alexwjj
  * @Date: 2020-10-16 16:52:25
- * @LastEditors: MFine
+ * @LastEditors: alexwjj
  * @LastEditTime: 2020-10-16 16:54:22
  */
 export enum ModalStatusCode{

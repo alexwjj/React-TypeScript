@@ -1,9 +1,9 @@
 /*
  * @Descripttion:
  * @version:
- * @Author: MFine
+ * @Author: alexwjj
  * @Date: 2021-01-04 22:54:12
- * @LastEditors: MFine
+ * @LastEditors: alexwjj
  * @LastEditTime: 2021-01-15 21:45:43
  */
 export interface RoleModel {

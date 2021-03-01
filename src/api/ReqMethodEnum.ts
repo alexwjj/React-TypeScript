@@ -1,9 +1,9 @@
 /*
  * @Descripttion:
  * @version:
- * @Author: MFine
+ * @Author: alexwjj
  * @Date: 2020-11-02 14:18:37
- * @LastEditors: MFine
+ * @LastEditors: alexwjj
  * @LastEditTime: 2020-11-02 14:28:09
  */
 export enum ReqMethodEnum {

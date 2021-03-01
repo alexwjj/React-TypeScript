@@ -4,9 +4,9 @@ import { SET_HEAD_TITLE, RECEIVE_USER, SHOW_ERROR_MSG, RESET_USER } from './acti
 /*
  * @Descripttion:
  * @version:
- * @Author: MFine
+ * @Author: alexwjj
  * @Date: 2021-01-27 23:37:19
- * @LastEditors: MFine
+ * @LastEditors: alexwjj
  * @LastEditTime: 2021-02-02 23:46:10
  */
 

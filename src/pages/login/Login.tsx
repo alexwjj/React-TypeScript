@@ -1,110 +1,95 @@
-import React, { Component } from 'react';
-import './login.less';
-import logo from '../../assets/images/logo.png';
-import { Form, Input, Button, message } from 'antd';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { RuleObject } from 'antd/lib/form';
-import { StoreValue } from 'antd/lib/form/interface';
-import { Redirect, RouteComponentProps, withRouter } from 'react-router';
-import { connect } from 'react-redux';
-import { RootState } from 'typesafe-actions';
-import { login } from '../../redux/actions';
-import { bindActionCreators } from 'redux';
-import { LoginUser } from '../../utils/StorageUtils';
+import React from "react";
+import { useHistory } from "react-router-dom";
+import "./login.less";
+import {
+  FormInputField,
+  Form,
+  FormStrategy,
+  Validators,
+  Pop,
+  Icon,
+  Button,
+} from "zent";
+import imgURL from "../../assets/images/logo.png";
 
-/**
- *  登录的路由组件
- *  Author: MFine
- */
+function Login() {
+  const form = Form.useForm(FormStrategy.View);
+  const [initializing, setInitializing] = React.useState(false);
+  const initialize = React.useCallback(() => {
+    setInitializing(true);
+    setTimeout(() => {
+      form.initialize({
+        name: "alexwjj",
+        password: "88888888",
+      });
+      setInitializing(false);
+    }, 1000);
+  }, [form]);
+	let history = useHistory();
 
-type LoginProps = RouteComponentProps & ReturnType<typeof mapDispatchToProps> & ReturnType<typeof mapStateToProps>;
-
-class Login extends Component<LoginProps, {}> {
-	validatePwd = (rule: RuleObject, value: StoreValue) => {
-		if (!value) {
-			return Promise.reject('密码必须输入');
-		} else if (value.length < 3 || value.length > 12) {
-			return Promise.reject('密码长度不能小于4位或大于12位');
-		} else if (!/^[a-zA-Z0-9_]+$/.test(value)) {
-			return Promise.reject('密码必须是英文，数字和下划线组成');
-		} else {
-			return Promise.resolve();
-		}
-	};
-
-	onFinishFailed = (errorInfo: any) => {
-		console.log('错了', errorInfo);
-	};
-
-	onFinish = (values: { name: string; password: string }) => {
-		this.props.login(values.name, values.password);
-    message.info("张旭你个傻逼，新年快乐呀")
-	};
-
-	private loginFromCom() {
-		return (
-			<Form
-				onFinish={this.onFinish}
-				onFinishFailed={this.onFinishFailed}
-				name="normal_login"
-				className="login-form"
-				initialValues={{ remember: true }}
-			>
-				<Form.Item
-					name="name"
-					rules={[
-						{ required: true, whitespace: true, message: '请输入您的用户名' },
-						{ max: 12, message: '用户名最多十二位' },
-						{ min: 3, message: '用户名至少三位' },
-						{ pattern: /^[a-zA-Z0-9_]+$/, message: '用户名必须是英文,数字和下划线组成' },
-					]}
-				>
-					<Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
-				</Form.Item>
-				<Form.Item name="password" rules={[{ validator: this.validatePwd }]}>
-					<Input prefix={<LockOutlined className="site-form-item-icon" />} type="password" placeholder="Password" />
-				</Form.Item>
-				<Form.Item>
-					<Button type="primary" htmlType="submit" className="login-form-button">
-						Log in
-					</Button>
-				</Form.Item>
-			</Form>
-		);
-	}
-
-	render() {
-		const user: LoginUser = this.props.user;
-		if (user && user.id) {
-			return <Redirect to="/"></Redirect>;
-		}
-
-		return (
-			<div className="login">
-				<header className="login-header">
-					<img src={logo} alt="logo"></img>
-					<h1>React项目:后台管理系统</h1>
-				</header>
-				<section className="login-content">
-					<div className={user.errorMsg ? 'error-msg show' : 'error-msg'}>{user.errorMsg}</div>
-					<h2>用户登录</h2>
-					{this.loginFromCom()}
-				</section>
-			</div>
-		);
-	}
+  const handleClick = () => {
+    console.log(form.getValue(),"form");
+    const user = form.getValue()
+    sessionStorage.setItem('user', JSON.parse(JSON.stringify(user)));
+    history.push("/home");
+  };
+  return (
+    <div className="login">
+      <div className="login-logo"></div>
+      <div className="login-content">
+        {/* <img src={require('../../assets/imgs/fe-logo.png')} alt="logo"  /> */}
+        <Form layout="horizontal" form={form} className="login-form">
+          <div style={{ textAlign: "center" }}>
+            <img
+              src={imgURL}
+              alt="logo"
+              style={{ width: "50px", height: "50px" }}
+            />
+          </div>
+          <FormInputField
+            name="name"
+            label={
+              <span>
+                用户名&nbsp;
+                <Pop
+                  trigger="hover"
+                  content="用户名用于个人账号登录"
+                  centerArrow
+                >
+                  <Icon type="error-circle-o" />
+                </Pop>
+                :
+              </span>
+            }
+            validators={[
+              Validators.minLength(5, "用户名至少 5 个字"),
+              Validators.maxLength(25, "用户名最多 25 个字"),
+            ]}
+            helpDesc="用户名alexwjj"
+            required="必填"
+          />
+          <FormInputField
+            name="password"
+            props={{ type: "password" }}
+            label="密码:"
+            validateOccasion={
+              Form.ValidateOccasion.Blur | Form.ValidateOccasion.Change
+            }
+            validators={[Validators.pattern(/^[0-9]+$/, "只允许数字")]}
+            required="必填"
+          />
+          <div style={{ textAlign: "center" }}>
+            <Button type="primary" onClick={initialize} loading={initializing}>
+              填充
+            </Button>
+            <Button type="primary" onClick={handleClick}>
+              登录
+            </Button>
+            <Button onClick={form.model.clear.bind(form.model)}>重置</Button>
+          </div>
+        </Form>
+      </div>
+    </div>
+  );
 }
-
-const mapStateToProps = (state: RootState) => ({
-	user: state.user,
-});
-
-const mapDispatchToProps = (dispatch: any) =>
-	bindActionCreators(
-		{
-			login: login,
-		},
-		dispatch
-	);
-
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Login));
+export default Login;

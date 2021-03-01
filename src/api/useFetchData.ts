@@ -6,9 +6,9 @@ import { ReqMethodEnum } from './ReqMethodEnum';
 /*
  * @Descripttion:
  * @version:
- * @Author: MFine
+ * @Author: alexwjj
  * @Date: 2021-01-23 21:42:50
- * @LastEditors: MFine
+ * @LastEditors: alexwjj
  * @LastEditTime: 2021-01-30 22:16:52
  */
 

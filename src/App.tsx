@@ -1,13 +1,14 @@
 /*
  * @Descripttion: 
  * @version: 
- * @Author: MFine
+ * @Author: alexwjj
  * @Date: 2020-09-28 21:45:10
- * @LastEditors: MFine
+ * @LastEditors: alexwjj
  * @LastEditTime: 2021-02-11 13:43:50
  */
 import React, { Component } from 'react';
 import 'antd/dist/antd.less';
+import 'zent/css/index.css';
 import Login from './pages/login/Login';
 import admin from './pages/admin/admin';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';

@@ -1,9 +1,9 @@
 /*
  * @Descripttion: 
  * @version: 
- * @Author: MFine
+ * @Author: alexwjj
  * @Date: 2020-10-21 17:11:52
- * @LastEditors: MFine
+ * @LastEditors: alexwjj
  * @LastEditTime: 2020-11-29 15:48:03
  */
 export interface ICategory {

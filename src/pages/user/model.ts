@@ -1,9 +1,9 @@
 /*
  * @Descripttion:
  * @version:
- * @Author: MFine
+ * @Author: alexwjj
  * @Date: 2021-01-21 23:37:24
- * @LastEditors: MFine
+ * @LastEditors: alexwjj
  * @LastEditTime: 2021-01-23 17:23:58
  */
 export interface UserModel {

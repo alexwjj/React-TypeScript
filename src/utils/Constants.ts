@@ -1,9 +1,9 @@
 /*
  * @Descripttion: 常用的一些常量
  * @version: 1.0
- * @Author: MFine
+ * @Author: alexwjj
  * @Date: 2020-11-29 16:16:27
- * @LastEditors: MFine
+ * @LastEditors: alexwjj
  * @LastEditTime: 2020-12-27 17:37:37
  */
 

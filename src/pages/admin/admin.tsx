@@ -1,9 +1,9 @@
 /*
  * @Descripttion:
  * @version:
- * @Author: MFine
+ * @Author: alexwjj
  * @Date: 2020-10-14 21:16:42
- * @LastEditors: MFine
+ * @LastEditors: alexwjj
  * @LastEditTime: 2021-02-11 01:32:47
  */
 import React, { Component } from 'react';
@@ -28,8 +28,8 @@ type IProps = ReturnType<typeof mapStateToProps>;
 
 class admin extends Component<IProps, {}> {
 	render() {
-		const user = this.props.user;
-		if (user === undefined || user.id === undefined) {
+		const user = sessionStorage.getItem('user');
+		if (!user) {
 			return <Redirect to="/login"></Redirect>;
 		}
 		return (

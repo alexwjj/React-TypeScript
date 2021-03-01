@@ -2,9 +2,9 @@ import { ReqMethodEnum } from './ReqMethodEnum';
 /*
  * @Descripttion:
  * @version:
- * @Author: MFine
+ * @Author: alexwjj
  * @Date: 2020-09-28 21:45:10
- * @LastEditors: MFine
+ * @LastEditors: alexwjj
  * @LastEditTime: 2021-01-23 21:57:33
  */
 import { message } from 'antd';

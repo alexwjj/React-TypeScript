@@ -1,9 +1,9 @@
 /*
  * @Descripttion:
  * @version:
- * @Author: MFine
+ * @Author: alexwjj
  * @Date: 2020-11-03 22:59:39
- * @LastEditors: MFine
+ * @LastEditors: alexwjj
  * @LastEditTime: 2020-12-29 23:42:19
  */
 	export interface ProductsModel {

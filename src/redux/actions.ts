@@ -6,9 +6,9 @@ import { createAction } from 'typesafe-actions';
 /*
  * @Descripttion: 包含多个action creator的函数模块
  * @version:
- * @Author: MFine
+ * @Author: alexwjj
  * @Date: 2021-01-27 23:38:20
- * @LastEditors: MFine
+ * @LastEditors: alexwjj
  * @LastEditTime: 2021-02-02 23:48:19
  */
 export const setHeadTitle = createAction(SET_HEAD_TITLE)<string>();
