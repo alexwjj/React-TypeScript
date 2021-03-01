@@ -1,0 +1,105 @@
+###
+POST http://localhost:5000/api/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "name": "admin",
+  "password": "admin"
+}
+###
+GET http://localhost:5000/hello
+###
+GET http://api.map.baidu.com/telematics/v3/weather?location=%E5%B8%B8%E5%B7%9E&output=json&ak=3p49MVra6urFRGOT9s8UBWr2
+
+###
+GET http://localhost:5000/api/category/list/0
+
+###
+
+POST http://localhost:5000/api/category/add
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "parentId": "0",
+  "categoryName":"一级分类",
+  "name": "乐器1"
+}
+
+
+###
+
+POST http://localhost:5000/api/category/add
+
+Content-Type: application/json
+{
+  "categoryName":"一级分类100",
+  "parentId":"0"
+}
+
+
+###
+
+PUT http://localhost:5000/api/category/update
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "parentId": "0",
+  "categoryName":"一级分类",
+  "name": "乐器1"
+}
+
+###
+
+POST http://localhost:5000/api/products/list
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "pageNum":1,
+  "pageSize":3
+}
+
+###
+GET http://localhost:5000/api/products/searchByDesc/一部手机而已/1/2
+
+
+###
+
+GET http://localhost:5000/api/products/searchByName/小米8/1/2
+
+
+###
+GET http://localhost:5000/api/products/searchByName?name=8&pageNum=1&pageSize=3
+
+###
+GET http://wthrcdn.etouch.cn/weather_mini?citykey=101010100
+
+###
+GET http://localhost:5000/files/1.jpV
+
+###
+GET http://localhost:5000/api/products/findById/1
+
+###
+DELETE  http://localhost:5000/deleteFile/1.jpg
+
+###
+POST http://localhost:5000/api/role/createRole HTTP/1.1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "authName": "admin",
+  "menus": "" ,
+  "name": "asdasda",
+  "v": 0,
+
+}

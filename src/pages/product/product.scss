@@ -1,0 +1,20 @@
+.product-detail {
+	.list {
+		.left {
+			font-size: 20px;
+			font-weight: bold;
+      margin-right: 15px;
+		}
+		.product-img {
+			margin-left: 10px;
+      zoom: 0.2;
+		}
+		.item {
+      display: flex;
+      display: -webkit-flex;
+      justify-content: flex-start;
+		}
+	}
+}
+
+
