@@ -22,52 +22,97 @@ export const menuList: MenuConfig[] = [
 		isPublic: true,
 	},
 	{
-		title: '商品',
-		key: '/products',
+		title: '门诊工作站',
+		key: '/clinic',
+		icon: 'HomeOutlined',
+		isPublic: true,
+	},
+	{
+		title: '挂号登记',
+		key: '/register',
 		icon: 'AppstoreOutlined',
 		children: [
 			{
-				title: '品类管理',
-				key: '/category',
+				title: '挂号记录',
+				key: '/record',
 				icon: 'ToolOutlined',
 			},
 			{
-				title: '商品管理',
-				key: '/product',
+				title: '新建挂号',
+				key: '/add-register',
 				icon: 'ToolOutlined',
 			},
 		],
 	},
 	{
-		title: '用户管理',
-		key: '/user',
-		icon: 'UserOutlined',
-	},
-	{
-		title: '角色管理',
-		key: '/role',
-		icon: 'SafetyOutlined',
-	},
-	{
-		title: '图形图表',
-		key: '/charts',
-		icon: 'AreaChartOutlined',
+		title: '收费管理',
+		key: '/charge',
+		icon: 'AppstoreOutlined',
 		children: [
 			{
-				title: '柱形图',
-				key: '/bar',
-				icon: 'BarsOutlined',
+				title: '收费管理',
+				key: '/charge-manage',
+				icon: 'ToolOutlined',
 			},
 			{
-				title: '折线图',
-				key: '/line',
-				icon: 'LineChartOutlined',
+				title: '结算记录',
+				key: '/settle-record',
+				icon: 'ToolOutlined',
 			},
 			{
-				title: '饼图',
-				key: '/pie',
-				icon: 'PieChartOutlined',
+				title: '处方详情',
+				key: '/prescription-detail',
+				icon: 'ToolOutlined',
 			},
 		],
 	},
+	// {
+	// 	title: '商品',
+	// 	key: '/products',
+	// 	icon: 'AppstoreOutlined',
+	// 	children: [
+	// 		{
+	// 			title: '品类管理',
+	// 			key: '/category',
+	// 			icon: 'ToolOutlined',
+	// 		},
+	// 		{
+	// 			title: '商品管理',
+	// 			key: '/product',
+	// 			icon: 'ToolOutlined',
+	// 		},
+	// 	],
+	// },
+	// {
+	// 	title: '用户管理',
+	// 	key: '/user',
+	// 	icon: 'UserOutlined',
+	// },
+	// {
+	// 	title: '角色管理',
+	// 	key: '/role',
+	// 	icon: 'SafetyOutlined',
+	// },
+	// {
+	// 	title: '图形图表',
+	// 	key: '/charts',
+	// 	icon: 'AreaChartOutlined',
+	// 	children: [
+	// 		{
+	// 			title: '柱形图',
+	// 			key: '/bar',
+	// 			icon: 'BarsOutlined',
+	// 		},
+	// 		{
+	// 			title: '折线图',
+	// 			key: '/line',
+	// 			icon: 'LineChartOutlined',
+	// 		},
+	// 		{
+	// 			title: '饼图',
+	// 			key: '/pie',
+	// 			icon: 'PieChartOutlined',
+	// 		},
+	// 	],
+	// },
 ];

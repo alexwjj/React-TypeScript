@@ -32,29 +32,29 @@ class LeftNav extends Component<LeftNavProps, {}> {
 	}
 
 	getOpenKey = (menuList: MenuConfig[]) => {
-		const path: string = this.props.location.pathname;
+		// const path: string = this.props.location.pathname;
 		return menuList.forEach((item) => {
 			if (item.children) {
-				const cItem = item.children.find((cItem) => path.indexOf(cItem.key) === 0);
-				if (cItem) {
+				// const cItem = item.children.find((cItem) => path.indexOf(cItem.key) === 0);
+				// if (cItem) {
 					this.openKey = item.key;
-				}
+				// }
 			}
 		});
 	};
 
-	private hasAuth = (node: MenuConfig): boolean => {
-    // const user: LoginUser = this.props.user;
-		// if (user.name === 'admin' || node.isPublic || (user.menus??[]).indexOf(node.key) !== -1) {
-		// 	return true;
-		// } else if (node.children) {
-		// 	return !!node.children.find((child) => {
-		// 		return (user.menus??[]).indexOf(child.key) !== -1;
-		// 	});
-		// }
-		// 权限全部放开
-		return true;
-	};
+	// private hasAuth = (node: MenuConfig): boolean => {
+    // // const user: LoginUser = this.props.user;
+	// 	// if (user.name === 'admin' || node.isPublic || (user.menus??[]).indexOf(node.key) !== -1) {
+	// 	// 	return true;
+	// 	// } else if (node.children) {
+	// 	// 	return !!node.children.find((child) => {
+	// 	// 		return (user.menus??[]).indexOf(child.key) !== -1;
+	// 	// 	});
+	// 	// }
+	// 	// 权限全部放开
+	// 	return true;
+	// };
 
 	getMenuNodes = (menuList: MenuConfig[]): JSX.Element[] | null => {
 		return menuList.map((item) => {
@@ -77,7 +77,7 @@ class LeftNav extends Component<LeftNavProps, {}> {
 	getMenuNodes2 = (menuList: MenuConfig[]): JSX.Element[] => {
 		const path = this.props.location.pathname;
 		return menuList.reduce((pre: JSX.Element[], item: MenuConfig): JSX.Element[] => {
-			if (this.hasAuth(item)) {
+			// if (this.hasAuth(item)) {
 				if (!item.children) {
 					if (item.key === path || path.indexOf(item.key) === 0) {
 						this.props.setHeadTitle(item.title);
@@ -96,7 +96,7 @@ class LeftNav extends Component<LeftNavProps, {}> {
 						</SubMenu>
 					);
 				}
-			}
+			// }
 			return pre;
 		}, []);
 	};

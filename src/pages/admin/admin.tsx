@@ -18,7 +18,15 @@ import Bar from '../chars/Bar';
 import Line from '../chars/Line';
 import Pie from '../chars/Pie';
 import Home from '../home/Home';
+import Clinic from '../clinic/index';
 import User from '../user/User';
+import Record from '../register/record';
+import AddRegister from '../register/add-register';
+import ChargeManage from '../charge/charge-manage';
+import SettleRecord from '../charge/settle-record';
+import PrescriptionDetail from '../charge/prescription-detail';
+
+
 import { connect } from 'react-redux';
 import { RootState } from 'typesafe-actions';
 import NotFound from '../not-found/not-found';
@@ -43,6 +51,13 @@ class admin extends Component<IProps, {}> {
 						<Switch>
 							<Redirect exact={true} from="/" to="/home"></Redirect>
 							<Route path="/home" component={Home}></Route>
+							<Route path="/clinic" component={Clinic}></Route>
+							<Route path="/record" component={Record}></Route>
+							<Route path="/add-register" component={AddRegister}></Route>
+							<Route path="/charge-manage" component={ChargeManage}></Route>
+							<Route path="/settle-record" component={SettleRecord}></Route>
+							<Route path="/prescription-detail" component={PrescriptionDetail}></Route>
+							{/* 废弃 */}
 							<Route path="/category" component={Category}></Route>
 							<Route path="/product" component={Product}></Route>
 							<Route path="/role" component={Role}></Route>
