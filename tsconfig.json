@@ -18,6 +18,8 @@
     "resolveJsonModule": true,
     "suppressImplicitAnyIndexErrors": true,
     "noEmit": true,
+    // "noImplicitAny": false,
+    // "noUnusedLocals": false,
     "jsx": "react",
     "isolatedModules": true
   },
