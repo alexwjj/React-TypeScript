@@ -27,6 +27,7 @@ import SettleRecord from "../charge/settle-record";
 import PrescriptionDetail from "../charge/prescription-detail";
 import Demo from "../demo";
 import DemoHooks from "../demo-hooks";
+import DemoComponents from "../demo-components";
 
 import { connect } from "react-redux";
 import { RootState } from "typesafe-actions";
@@ -59,6 +60,7 @@ class admin extends Component<IProps, {}> {
               <Route path="/settle-record" component={SettleRecord}></Route>
               <Route path="/demo" component={Demo}></Route>
               <Route path="/demo-hooks" component={DemoHooks}></Route>
+              <Route path="/demo-components" component={DemoComponents}></Route>
               <Route
                 path="/prescription-detail"
                 component={PrescriptionDetail}

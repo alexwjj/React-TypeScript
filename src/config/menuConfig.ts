@@ -75,7 +75,13 @@ export const menuList: MenuConfig[] = [
 	{
 		title: 'Demo-Hooks',
 		key: '/demo-hooks',
-		icon: 'HomeOutlined',
+		icon: 'AppleOutlined',
+		isPublic: true,
+	},
+	{
+		title: 'Demo-Components',
+		key: '/demo-components',
+		icon: 'AppleOutlined',
 		isPublic: true,
 	},
 	// {

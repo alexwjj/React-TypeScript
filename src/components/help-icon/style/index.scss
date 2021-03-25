@@ -1,0 +1,14 @@
+@import 'vars/colors';
+
+.help-icon {
+  &__icon {
+    @include theme-color(color, stroke, 3);
+
+    font-size: 16px;
+    margin-left: 4px;
+  }
+
+  &__pop {
+    max-width: 400px;
+  }
+}
