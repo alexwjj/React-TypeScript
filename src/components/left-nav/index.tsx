@@ -110,7 +110,7 @@ class LeftNav extends Component<LeftNavProps, {}> {
 			<div className="left-nav">
 				<Link to="/" className="left-nav-header">
 					<img src={logo} alt="" />
-					<h1>俊劫HIS系统</h1>
+					<h1>俊劫学习系统</h1>
 				</Link>
 				<div>
 					<Menu selectedKeys={[path]} defaultOpenKeys={[this.openKey]} mode="inline" theme="dark">
