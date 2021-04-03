@@ -29,6 +29,12 @@ import Demo from "../demo";
 import DemoHooks from "../demo-hooks";
 import DemoComponents from "../demo-components";
 
+import ZentBase from "../zent/base";
+import ZentNav from "../zent/nav";
+import ZentData from "../zent/data";
+import ZentShow from "../zent/show";
+import ZentFeedback from "../zent/feedback";
+
 import { connect } from "react-redux";
 import { RootState } from "typesafe-actions";
 import NotFound from "../not-found/not-found";
@@ -49,7 +55,13 @@ class admin extends Component<IProps, {}> {
         </Sider>
         <Layout>
           <Header></Header>
-          <Content style={{ backgroundColor: "#fff", margin: "12px 0 0 12px", paddingLeft: "12px"}}>
+          <Content
+            style={{
+              backgroundColor: "#fff",
+              margin: "12px 0 0 12px",
+              paddingLeft: "12px",
+            }}
+          >
             <Switch>
               <Redirect exact={true} from="/" to="/home"></Redirect>
               <Route path="/home" component={Home}></Route>
@@ -65,6 +77,11 @@ class admin extends Component<IProps, {}> {
                 path="/prescription-detail"
                 component={PrescriptionDetail}
               ></Route>
+              <Route path="/zent-base" component={ZentBase}></Route>
+              <Route path="/zent-nav" component={ZentNav}></Route>
+              <Route path="/zent-data" component={ZentData}></Route>
+              <Route path="/zent-show" component={ZentShow}></Route>
+              <Route path="/zent-feedback" component={ZentFeedback}></Route>
               {/* 废弃 */}
               <Route path="/category" component={Category}></Route>
               <Route path="/product" component={Product}></Route>
