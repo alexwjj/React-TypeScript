@@ -6,6 +6,8 @@ import {
   LayoutGrid as Grid,
   LayoutConfigProvider as ConfigProvider,
 } from "zent";
+import JJForm from "../../components/zent/form";
+
 
 import { Alert } from "zent";
 
@@ -27,12 +29,14 @@ class Home extends React.Component {
                 type="info"
                 outline
                 title="数据类组件"
-                description="主要有affix/breadcrumb/dropdown/grid/menu/pagination/steps/tabs/tree, 先熟悉下这个，后面组件嵌套着用"
+                description="主要都是表单相关的，比较重要"
               />
 
-            <Alert title="tabs选项卡,3种type类型,'normal' , 'card' , 'button'" />
+            <Alert title="form表单" />
             <Row>
-              <Col span={12}></Col>
+              <Col span={12}>
+                <JJForm></JJForm>
+              </Col>
               <Col span={12}></Col>
             </Row>
           </Grid>
