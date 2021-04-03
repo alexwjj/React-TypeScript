@@ -16,7 +16,7 @@ export interface MenuConfig {
 
 export const menuList: MenuConfig[] = [
 	{
-		title: '首页',
+		title: 'zent',
 		key: '/home',
 		icon: 'HomeOutlined',
 		isPublic: true,

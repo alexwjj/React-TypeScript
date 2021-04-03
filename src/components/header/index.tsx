@@ -17,6 +17,8 @@ import LinkButton from '../link-button';
 import { connect } from 'react-redux';
 import { RootState } from 'typesafe-actions';
 import { logout } from '../../redux/actions';
+import { Affix } from "zent";
+
 
 const mapStateToProps = (state: RootState) => ({
 	headTitle: state.headTitle,
@@ -98,6 +100,7 @@ class Header extends Component<HeaderProps, HeaderState> {
 	render() {
 		
 		return (
+			<Affix offsetTop={0}>
 			<div className="header">
 				<div className="header-top">
 					<span>欢迎，{userSession ? userSession.name : ''}</span>
@@ -112,6 +115,7 @@ class Header extends Component<HeaderProps, HeaderState> {
 					</div>
 				</div> */}
 			</div>
+			</Affix>
 		);
 	}
 }
