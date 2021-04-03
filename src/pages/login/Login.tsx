@@ -51,7 +51,7 @@ function Login() {
               alt="logo"
               style={{ width: "50px", height: "50px" }}
             /> */}
-            医院his管理系统
+            俊劫学习系统
           </div>
           <FormInputField
             name="name"

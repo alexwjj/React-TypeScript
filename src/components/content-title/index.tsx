@@ -3,24 +3,26 @@ import React from "react";
 import "./style/index.less";
 import { Icon,IIconProps } from "zent";
 
-interface IProps extends IIconProps {
+interface IProps {
   title: string;
-  color?: string;
+  iconType?: IIconProps['type'];
+  isShowIcon?: boolean;
   iconClassName?: string;
   titleClassName?: string;
 }
 
 
 export const ContentTitle: React.FC<IProps> = (props) => {
-  const { title, iconClassName, titleClassName, ...popProps } = props;
+  const { title, iconType = 'youzan', isShowIcon = false , iconClassName, titleClassName, ...popProps } = props;
 
   return (
     <div className={cn("content-title", titleClassName)}>
       {title}
-      <Icon
+      {isShowIcon && <Icon
         className={cn("content-title__icon", iconClassName)}
         {...popProps}
-      />
+        type={iconType}
+      />}
     </div>
   );
 };

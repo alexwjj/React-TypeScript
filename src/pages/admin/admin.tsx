@@ -49,7 +49,7 @@ class admin extends Component<IProps, {}> {
         </Sider>
         <Layout>
           <Header></Header>
-          <Content style={{ backgroundColor: "#fff", margin: "12px 0 0 12px" }}>
+          <Content style={{ backgroundColor: "#fff", margin: "12px 0 0 12px", paddingLeft: "12px"}}>
             <Switch>
               <Redirect exact={true} from="/" to="/home"></Redirect>
               <Route path="/home" component={Home}></Route>

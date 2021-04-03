@@ -11,16 +11,16 @@ import 'antd/dist/antd.less';
 import 'zent/css/index.css';
 import Login from './pages/login/Login';
 import admin from './pages/admin/admin';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 class App extends Component {
 	render() {
 		return (
-			<HashRouter>
+			<BrowserRouter>
 				<Switch>
 					<Route path="/login" component={Login}></Route>
 					<Route path="/" component={admin}></Route>
 				</Switch>
-			</HashRouter>
+			</BrowserRouter>
 		);
 	}
 }
