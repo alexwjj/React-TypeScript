@@ -1,0 +1,17 @@
+.mt10 {
+    margin-top: 10px;
+}
+.zent-popover{
+    background-color: green;
+}
+
+.waypoint-demo-basic {
+    width: 400px;
+    height: 100px;
+    overflow: auto;
+    background-color: grey;
+    &__waypoint-line{
+        height:2px;
+        border: 1px solid red;
+    }
+}
