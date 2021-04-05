@@ -59,7 +59,6 @@ class admin extends Component<IProps, {}> {
             style={{
               backgroundColor: "#fff",
               margin: "12px 0 0 12px",
-              paddingLeft: "12px",
             }}
           >
             <Switch>

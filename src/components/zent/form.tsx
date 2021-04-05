@@ -40,7 +40,7 @@ function JJForm() {
   const resetForm = useCallback(() => {
     form.resetValue();
   }, [form]);
-  const onSubmit = React.useCallback((form) => {
+  const onSubmit = useCallback((form) => {
     const value = form.getValue();
     console.log(value);
   }, []);
@@ -141,10 +141,10 @@ function JJForm() {
       />
       <div className="zent-form-actions">
         <Button type="primary" htmlType="submit">
-          获取表单值
+          获取
         </Button>
         <Button type="primary" outline onClick={resetForm}>
-          重置表单值
+          重置
         </Button>
       </div>
     </Form>

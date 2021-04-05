@@ -24,7 +24,7 @@ class Home extends React.Component {
         <ConfigProvider
           value={{
             rowGutter: 20,
-            colGutter: 10,
+            colGutter: 0,
           }}
         >
           <Grid>

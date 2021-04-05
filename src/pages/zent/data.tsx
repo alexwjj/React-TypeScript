@@ -8,7 +8,6 @@ import {
 } from "zent";
 import JJForm from "../../components/zent/form";
 
-
 import { Alert } from "zent";
 
 class Home extends React.Component {
@@ -26,18 +25,17 @@ class Home extends React.Component {
         >
           <Grid>
             <Alert
-                type="info"
-                outline
-                title="数据类组件"
-                description="主要都是表单相关的，比较重要"
-              />
-
+              type="info"
+              outline
+              title="数据类组件"
+              description="主要都是表单相关的，比较重要"
+            />
             <Alert title="form表单" />
             <Row>
-              <Col span={12}>
+              <Col span={16}>
                 <JJForm></JJForm>
               </Col>
-              <Col span={12}></Col>
+              <Col span={8}></Col>
             </Row>
           </Grid>
         </ConfigProvider>
