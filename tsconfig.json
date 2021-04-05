@@ -16,10 +16,11 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "noUnusedParameters": false,
     "suppressImplicitAnyIndexErrors": true,
     "noEmit": true,
-    // "noImplicitAny": false,
-    // "noUnusedLocals": false,
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
     "jsx": "react",
     "isolatedModules": true
   },
