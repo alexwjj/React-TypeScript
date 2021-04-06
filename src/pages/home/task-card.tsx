@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Card, Button, Notify } from "zent";
+import { Card, Button } from "zent";
 import { ITask } from "./types";
 import { TASK_BTN_TEXT } from "./constants";
 
@@ -7,22 +7,42 @@ interface IProps extends ITask {
   date?: string;
 }
 
-function TaskCard(props) {
-  const onChange = () => {
-    // props.onStatusChange(props.task)
-    Notify.info("功能开发中")
-  }
+function TaskCardItem(props) {
+  const onStatusChange = React.useCallback(() => {
+    props.onStatusChange(props.task);
+  }, [props]);
   return (
     <>
       <Card
         style={{ marginTop: "10px" }}
         title={props.task.title}
         type="nested"
-        action={<Button bordered={false} onClick={ onChange }>{TASK_BTN_TEXT[props.task.status]}</Button>}
+        action={
+          <Button bordered={false} onClick={onStatusChange}>
+            {TASK_BTN_TEXT[props.task.status]}
+          </Button>
+        }
       >
         <p>{props.task.description}</p>
       </Card>
     </>
   );
 }
+
+function TaskCard(props) {
+  return props.taskList?.length ? (
+    props.taskList.map((task, index) => {
+      return (
+        <TaskCardItem
+          key={index}
+          task={task}
+          onStatusChange={props.onStatusChange}
+        ></TaskCardItem>
+      );
+    })
+  ) : (
+    <div>暂无任务</div>
+  );
+}
+
 export default TaskCard;

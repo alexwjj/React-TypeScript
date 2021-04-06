@@ -1,39 +1,51 @@
 import { Dialog, Button } from "zent";
-import * as React from "react";
-import { FormInputField, Form, FormStrategy, Validators, Notify } from "zent";
+import React from "react";
+import { FormInputField, Form, FormStrategy, Validators } from "zent";
+interface IFormValue {
+  title: string;
+  description: string;
+}
 interface IProps {
   visible: boolean;
-  onConfirmDialog(): void;
+  type: string;
+  taskInfo: any;
+  onConfirmDialog: (value: IFormValue) => void;
   onCloseDialog(): void;
 }
 
-function TaskDialog(props) {
+function TaskDialog(props: IProps) {
   const form = Form.useForm(FormStrategy.View);
-  const onConfirm = () => {
-    const value = form.getValue();
-    if (!value.title || !value.description) {
-      Notify.error("请填写完成再提交");
-      return;
+
+  setTimeout(() => {
+    if (props.type === "detail") {
+      form.initialize(props.taskInfo);
+    } else {
+      form.clear();
     }
-    props.onConfirmDialog(form.getValue());
-  };
+  }, 0);
+
+  const resetForm = React.useCallback(() => {
+    form.clear();
+    form.model.clearError()
+    props.onCloseDialog();
+  }, [form, props]);
+  const onSubmit = React.useCallback(
+    (form) => {
+      const value = form.getValue();
+      props.onConfirmDialog(value);
+      form.resetValue();
+    },
+    [props]
+  );
 
   return (
     <div>
       <Dialog
         visible={props.visible}
-        onClose={() => props.onCloseDialog()}
-        footer={
-          <div>
-            <Button type="primary" onClick={() => onConfirm()}>
-              确定
-            </Button>
-            <Button onClick={() => props.onCloseDialog()}>关闭</Button>
-          </div>
-        }
-        title={props.title}
+        onClose={() => resetForm()}
+        title={props.type === "add" ? "新建任务" : "任务详情"}
       >
-        <Form layout="horizontal" form={form}>
+        <Form layout="horizontal" form={form} disabled={props.type === "detail"} onSubmit={onSubmit}>
           <FormInputField
             name="title"
             label="任务名称:"
@@ -53,6 +65,19 @@ function TaskDialog(props) {
             }
             required="必填"
           />
+          {props.type === "add" ? (
+            <div className="zent-form-actions">
+              <Button type="primary" htmlType="submit">
+                确定
+              </Button>
+              <Button type="primary" outline onClick={resetForm}>
+                取消
+              </Button>
+            </div>
+          ) : (
+            ""
+          )}
+
           {/* <Button htmlType="reset">重置</Button> */}
         </Form>
       </Dialog>

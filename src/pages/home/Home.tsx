@@ -22,13 +22,12 @@ function Home() {
   const initialValue = localTask ? JSON.parse(localTask) : allList;
   const [taskList, setTaskList] = React.useState(initialValue);
   const [dialogVisible, setDialogVisible] = React.useState<boolean>(false);
-  const onCheckDetail = (task: any) => {
-    Notify.info(
-      `任务：${task.title}，内容：${task.description}只能看这么多哦，功能开发中`
-    );
-  };
+  const [dialogType, setDialogType] = React.useState<string>("");
+  const [taskInfo, setTaskInfo] = React.useState<ITask>();
+
   const onAddTask = () => {
     // Notify.info("功能开发中");
+    setDialogType("add");
     setDialogVisible(true);
   };
   const onCloseDialog = () => {
@@ -59,13 +58,22 @@ function Home() {
   );
 
   const onStatusChange = (task) => {
-    // console.log(task, 'tasktasktask');
-    // if (task?.status === 0 || task?.status === 1) {
-    //   // let task = taskList.find((v) => v.id === task.id);
-    //   // console.log(task, 'tasktasktask');
-    //   // task[0].status +=1
-    //   // setTaskList(taskList)
-    // }
+    console.log(task);
+    if (task?.status === TASK_STATUS.DONE) {
+      setDialogType("detail");
+      setTaskInfo(task);
+      setDialogVisible(true);
+      return;
+    }
+    if (
+      task?.status === TASK_STATUS.TODO ||
+      task?.status === TASK_STATUS.DOING
+    ) {
+      let newTask = taskList.filter((v) => v.id !== task.id);
+      task.status += 1;
+      newTask.push(task);
+      setTaskList(newTask);
+    }
   };
   return (
     <div style={{ margin: "10px" }}>
@@ -88,10 +96,10 @@ function Home() {
                       <Button
                         type="primary"
                         onClick={() => {
-                          onCheckDetail(task);
+                          onStatusChange(task);
                         }}
                       >
-                        查看任务详情
+                        查看详情
                       </Button>
                     }
                   />
@@ -103,8 +111,9 @@ function Home() {
             <Col span={6}>
               <div className="task task_my">
                 <TaskDialog
-                  title="新建任务"
+                  type={dialogType}
                   visible={dialogVisible}
+                  taskInfo={taskInfo}
                   onConfirmDialog={onConfirmDialog}
                   onCloseDialog={onCloseDialog}
                 ></TaskDialog>
@@ -121,42 +130,40 @@ function Home() {
                     </Button>
                   }
                 >
-                  {taskList.map((task, index) => {
-                    return (
-                      <TaskCard
-                        key={index}
-                        task={task}
-                        onStatusChange={onStatusChange(task)}
-                      ></TaskCard>
-                    );
-                  })}
+                  <TaskCard
+                    taskList={taskList}
+                    onStatusChange={onStatusChange}
+                  ></TaskCard>
                 </Card>
               </div>
             </Col>
             <Col span={6}>
               <div className="task task_todo">
                 <Card title="TODO">
-                  {todoList.map((task, index) => {
-                    return <TaskCard key={index} task={task}></TaskCard>;
-                  })}
+                  <TaskCard
+                    taskList={todoList}
+                    onStatusChange={onStatusChange}
+                  ></TaskCard>
                 </Card>
               </div>
             </Col>
             <Col span={6}>
               <div className="task task_doing">
                 <Card title="DOING">
-                  {doingList.map((task, index) => {
-                    return <TaskCard key={index} task={task}></TaskCard>;
-                  })}
+                  <TaskCard
+                    taskList={doingList}
+                    onStatusChange={onStatusChange}
+                  ></TaskCard>
                 </Card>
               </div>
             </Col>
             <Col span={6}>
               <div className="task task_done">
                 <Card title="DONE">
-                  {doneList.map((task, index) => {
-                    return <TaskCard key={index} task={task}></TaskCard>;
-                  })}
+                  <TaskCard
+                    taskList={doneList}
+                    onStatusChange={onStatusChange}
+                  ></TaskCard>
                 </Card>
               </div>
             </Col>

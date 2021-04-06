@@ -16,7 +16,7 @@ export interface MenuConfig {
 
 export const menuList: MenuConfig[] = [
   {
-    title: "主页",
+    title: "TODO",
     key: "/home",
     icon: "HomeOutlined",
     isPublic: true,
@@ -67,38 +67,38 @@ export const menuList: MenuConfig[] = [
   // 	],
   // },
   {
-    title: "zent",
+    title: "Zent",
     key: "/zent",
     icon: "AppstoreOutlined",
     children: [
       {
         title: "zent-base",
         key: "/zent-base",
-        icon: "HomeOutlined",
+        icon: "AimOutlined",
         isPublic: true,
       },
       {
         title: "zent-nav",
         key: "/zent-nav",
-        icon: "HomeOutlined",
+        icon: "RiseOutlined",
         isPublic: true,
       },
       {
         title: "zent-data",
         key: "/zent-data",
-        icon: "HomeOutlined",
+        icon: "DatabaseOutlined",
         isPublic: true,
       },
       {
         title: "zent-show",
         key: "/zent-show",
-        icon: "HomeOutlined",
+        icon: "ThunderboltOutlined",
         isPublic: true,
       },
       {
         title: "zent-feedback",
         key: "/zent-feedback",
-        icon: "HomeOutlined",
+        icon: "WhatsAppOutlined",
         isPublic: true,
       },
     ],
