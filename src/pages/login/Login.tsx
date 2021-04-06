@@ -87,7 +87,7 @@ function Login() {
           />
           <div style={{ textAlign: "center" }}>
             <Button type="primary" onClick={initialize} loading={initializing}>
-              账号
+              获取账号
             </Button>
             <Button type="primary" onClick={handleClick}>
               登录
