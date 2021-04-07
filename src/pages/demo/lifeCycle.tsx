@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "zent";
 interface IProps {
   text: string;
   count: number;
@@ -69,9 +70,10 @@ export default class LifeCycle extends React.Component<IProps, any> {
 
     return (
       <div className="container">
-        <button onClick={this.changeText} className="changeText">
+        <Button onClick={this.changeText} className="changeText">
           修改子组件文本内容
-        </button>
+        </Button>
+        
         <p> {this.props.count} </p>
 
         <p className="textContent">{this.state.text}</p>

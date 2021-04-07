@@ -16,7 +16,7 @@ export interface MenuConfig {
 
 export const menuList: MenuConfig[] = [
   {
-    title: "TODO",
+    title: "Todo",
     key: "/home",
     icon: "HomeOutlined",
     isPublic: true,
@@ -105,7 +105,7 @@ export const menuList: MenuConfig[] = [
   },
 
   {
-    title: "Demo",
+    title: "LifeCycle",
     key: "/demo",
     icon: "HomeOutlined",
     isPublic: true,

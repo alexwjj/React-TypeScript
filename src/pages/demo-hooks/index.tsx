@@ -5,8 +5,11 @@ import CallbackDemo from "./useCallback";
 import ContextDemo from "./useContext";
 import ReducerDemo from "./useReducer";
 // import useTime from "./useHooks.ts";
+// Hooks.defaultProps = {
+//   title: 'wjj'
+// }
 
-function Hooks() {
+function Hooks(props) {
   const [count, setCount] = useState(0);
   useEffect(() => {
     const titleCache = document.title;
@@ -20,6 +23,7 @@ function Hooks() {
 
   return (
     <div>
+      {/* {props.title} */}
       <Alert
         className="mt10"
         title="useCallback/useMemo"
@@ -64,5 +68,6 @@ function Hooks() {
     </div>
   );
 }
+
 
 export default Hooks;
