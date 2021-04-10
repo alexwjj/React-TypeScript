@@ -24,7 +24,7 @@ import {
 import { Alert, Pagination, Notify, Steps, Tabs } from "zent";
 const { MenuItem } = Menu;
 
-class Home extends React.Component {
+class Nav extends React.Component {
   state = {
     current: 1,
     dataList: [
@@ -178,4 +178,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default Nav;

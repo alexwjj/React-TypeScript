@@ -9,7 +9,7 @@ import {
 
 import { Alert } from "zent";
 
-class Home extends React.Component {
+class Show extends React.Component {
   state = {
     current: 1,
   };
@@ -42,4 +42,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default Show;

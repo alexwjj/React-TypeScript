@@ -14,7 +14,7 @@ import { Disabled, Button, Input, Popover } from "zent";
 
 import { Alert, Icon } from "zent";
 
-class Home extends React.Component {
+class Base extends React.Component {
   state = {
     current: 1,
   };
@@ -110,4 +110,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default Base;

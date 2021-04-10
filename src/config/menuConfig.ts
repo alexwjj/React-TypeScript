@@ -16,9 +16,15 @@ export interface MenuConfig {
 
 export const menuList: MenuConfig[] = [
   {
-    title: "Todo",
+    title: "Home",
     key: "/home",
     icon: "HomeOutlined",
+    isPublic: true,
+  },
+  {
+    title: "Todo",
+    key: "/todo",
+    icon: "LikeOutlined",
     isPublic: true,
   },
   // {
