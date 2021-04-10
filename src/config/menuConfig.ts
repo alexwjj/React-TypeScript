@@ -113,19 +113,25 @@ export const menuList: MenuConfig[] = [
   {
     title: "LifeCycle",
     key: "/demo",
-    icon: "HomeOutlined",
+    icon: "NodeIndexOutlined",
     isPublic: true,
   },
   {
     title: "Demo-Hooks",
     key: "/demo-hooks",
-    icon: "AppleOutlined",
+    icon: "RobotOutlined",
     isPublic: true,
   },
   {
     title: "Demo-Components",
     key: "/demo-components",
-    icon: "AppleOutlined",
+    icon: "LayoutOutlined",
+    isPublic: true,
+  },
+  {
+    title: "TypeScript",
+    key: "/ts-study",
+    icon: "FundProjectionScreenOutlined",
     isPublic: true,
   },
   // {

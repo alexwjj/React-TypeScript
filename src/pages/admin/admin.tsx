@@ -17,8 +17,9 @@ import Role from "../role/Role";
 import Bar from "../chars/Bar";
 import Line from "../chars/Line";
 import Pie from "../chars/Pie";
-import Home from "../home/Home";
+import Home from "../home";
 import Todo from "../todo";
+import TsStudy from "../ts-study";
 
 import Clinic from "../clinic/index";
 import User from "../user/User";
@@ -67,6 +68,7 @@ class admin extends Component<IProps, {}> {
               <Redirect exact={true} from="/" to="/home"></Redirect>
               <Route path="/home" component={Home}></Route>
               <Route path="/todo" component={Todo}></Route>
+              <Route path="/ts-study" component={TsStudy}></Route>
               <Route path="/clinic" component={Clinic}></Route>
               <Route path="/record" component={Record}></Route>
               <Route path="/add-register" component={AddRegister}></Route>
