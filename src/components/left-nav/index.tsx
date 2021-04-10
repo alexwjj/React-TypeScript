@@ -8,7 +8,7 @@
  */
 import React, { Component } from 'react';
 import './index.less';
-import logo from '../../assets/images/logo.png';
+// import logo from '../../assets/images/logo.png';
 import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
 import { Menu } from 'antd';
 import { menuList, MenuConfig } from '../../config/menuConfig';
@@ -109,7 +109,7 @@ class LeftNav extends Component<LeftNavProps, {}> {
 		return (
 			<div className="left-nav">
 				<Link to="/" className="left-nav-header">
-					<img src={logo} alt="" />
+					{/* <img src={logo} alt="" /> */}
 					<h1>俊劫学习系统</h1>
 				</Link>
 				<div>
