@@ -4,6 +4,7 @@ import { Alert, Button } from "zent";
 import CallbackDemo from "./useCallback";
 import ContextDemo from "./useContext";
 import ReducerDemo from "./useReducer";
+import UseRouter from "./useRouter";
 // import useTime from "./useHooks.ts";
 // Hooks.defaultProps = {
 //   title: 'wjj'
@@ -58,6 +59,13 @@ function Hooks(props) {
 
       <Alert
         className="mt10"
+        title="useHistory"
+        description="路由的一些操作"
+      ></Alert>
+      <UseRouter></UseRouter>
+
+      <Alert
+        className="mt10"
         title="自定义Hooks"
         description="基于原有的一些hooks可以进行进一步的封装"
       ></Alert>
@@ -65,6 +73,7 @@ function Hooks(props) {
         点击测试useTime, 获取最新事件
       </Button>
       <div>{time}</div> */}
+
     </div>
   );
 }

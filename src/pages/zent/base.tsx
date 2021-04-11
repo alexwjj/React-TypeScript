@@ -54,9 +54,12 @@ class Base extends React.Component {
                 <div className="mt10">
                   <Icon
                     type="youzan"
-                    style={{ fontSize: "30px", color: "red" }}
+                    className="ft30"
+                    style={{ color: "red" }}
                   />
-                  <Icon type="flow-o" spin style={{ fontSize: "30px" }} />
+                  <Icon type="flow-o" spin className="ft30"/>
+                  <Icon type="mini-apps-o" spin className="ft30"/>
+                  <Icon type="wechat" className="ft30"/>
                 </div>
               </Col>
             </Row>

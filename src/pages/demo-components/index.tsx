@@ -1,11 +1,9 @@
 import "./index.less";
 import React from "react";
-import { Breadcrumb } from "zent";
+import { BlockHeader, Alert } from "zent";
 // import HelpIcon from "../../components/help-icon";
 import ContentTitle from "../../components/content-title";
-import UseRouter from "./use-router";
 import VipIcon from "../../components/vip-icon";
-
 
 import {
   LayoutRow as Row,
@@ -15,14 +13,8 @@ import {
 } from "zent";
 
 function Example() {
-  const dataList = [
-    { name: "首页", href: "/" },
-    { name: "demo-hooks", href: "/demo-hooks" },
-    { name: "demo-components" },
-  ];
   return (
     <>
-      <Breadcrumb breads={dataList} />
       <ConfigProvider
         value={{
           rowGutter: 10,
@@ -30,6 +22,13 @@ function Example() {
         }}
       >
         <Grid className="layout-demo-basic">
+          <Alert
+            type="info"
+            outline
+            title="封装一些组件"
+            description="熟悉项目中已有的一些组件，同时学习代码规范等"
+          />
+          <BlockHeader title="标题组件"></BlockHeader>
           <Row>
             <Col span={24}>
               <ContentTitle
@@ -39,19 +38,14 @@ function Example() {
               ></ContentTitle>
             </Col>
           </Row>
-          <div style={{'color': 'red','fontSize': '20px'}}>这是一个练习组件边写的页面</div>
           <Row>
             <Col span={24}>
-              <ContentTitle title="路由的一些操作"></ContentTitle>
             </Col>
           </Row>
-          <UseRouter></UseRouter>
-          <Row>
-            <Col span={24}>
-              <ContentTitle title="CSS Object"></ContentTitle>
-            </Col>
-          </Row>
+          <BlockHeader title="会员等级组件，根据会员等级显示不同图标"></BlockHeader>
+          <VipIcon vip={0}></VipIcon>
           <VipIcon vip={1}></VipIcon>
+          <VipIcon vip={10}></VipIcon>
         </Grid>
       </ConfigProvider>
     </>

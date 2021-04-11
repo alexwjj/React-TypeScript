@@ -11,6 +11,7 @@ export default class LifeCycleContainer extends React.Component {
     text: "父组件的文本",
     display: "none",
     hideChild: true,
+    lifeCycle: "https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/",
   };
 
   // 点击按钮，修改父组件文本的方法
@@ -38,11 +39,14 @@ export default class LifeCycleContainer extends React.Component {
             修改父组件文本内容
           </Button>
           <Button onClick={this.hideChild} type="danger">
-            { this.state.hideChild ? '显示':'隐藏'}子组件
+            {this.state.hideChild ? "显示" : "隐藏"}子组件
           </Button>
           {this.state.hideChild ? null : (
             <LifeCycle text={this.state.text} count={1} />
           )}
+        </div>
+        <div>
+        <iframe src={this.state.lifeCycle} title="navigation" width="100%" height="600px"></iframe>
         </div>
       </>
     );
