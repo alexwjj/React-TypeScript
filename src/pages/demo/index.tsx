@@ -1,6 +1,6 @@
 import React from "react";
 import LifeCycle from "./lifeCycle";
-import { Button, Alert } from "zent";
+import { Button, Alert, BlockLoading } from "zent";
 import "./index.less";
 
 // 定义 LifeCycle 组件的父组件
@@ -11,6 +11,7 @@ export default class LifeCycleContainer extends React.Component {
     text: "父组件的文本",
     display: "none",
     hideChild: true,
+    loading: true,
     lifeCycle: "https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/",
   };
 
@@ -27,6 +28,11 @@ export default class LifeCycleContainer extends React.Component {
   hideChild = () => {
     this.setState({
       hideChild: !this.state.hideChild,
+    });
+  };
+  onLoading = () => {
+    this.setState({
+      loading: false,
     });
   };
 
@@ -46,7 +52,16 @@ export default class LifeCycleContainer extends React.Component {
           )}
         </div>
         <div>
-        <iframe src={this.state.lifeCycle} title="navigation" width="100%" height="600px"></iframe>
+          <BlockLoading loading={this.state.loading} iconSize={64} />
+          {/* @ts-ignore */}
+          <iframe
+            src={this.state.lifeCycle}
+            title="navigation"
+            width="100%"
+            height="600px"
+            onLoad={this.onLoading}
+            onError={this.onLoading}
+          ></iframe>
         </div>
       </>
     );
