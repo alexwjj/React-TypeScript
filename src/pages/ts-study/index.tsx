@@ -1,18 +1,15 @@
 import React from 'react';
 import { Alert } from 'zent';
-import { UserModel } from './types'
-
-type JUserModel1 = Partial<UserModel>
-type JUserModel2 = Required<UserModel>
-type JUserModel3 = Readonly<UserModel>
+import ReactMarkdown from 'react-markdown'
+// import apiMd from "./tstype.md";
 
 
 export const TS: React.FC<any> = () => {
-const user: JUserModel1 = {age:1}
+  const input = '# This is a header\n\nAnd this is a paragraph'
   return (
     <>
     <Alert title="typeScript" description="练习"></Alert>
-    {user.age}
+    <ReactMarkdown source={input} />
     </>
   );
 };
