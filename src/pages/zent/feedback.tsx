@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import JDialog from "../../components/zent/dialog";
+import JDrawer from "../../components/zent/drawer";
+import { JLoading } from "../../components/zent/loading";
 
 import {
   LayoutRow as Row,
@@ -7,7 +10,7 @@ import {
   LayoutConfigProvider as ConfigProvider,
 } from "zent";
 
-import { Alert, AnimateHeight, Button } from "zent";
+import { Alert, AnimateHeight, Button, Placeholder, Sweetalert } from "zent";
 
 const Feedback: React.FC = () => {
   const [height, setHeight] = useState<number>(200);
@@ -16,6 +19,12 @@ const Feedback: React.FC = () => {
   };
   const onDec = () => {
     setHeight(height - 100);
+  };
+  const showAlertInfo = () => {
+    Sweetalert.alert({
+      content: "这个是具体内容",
+      parentComponent: this,
+    });
   };
 
   return (
@@ -48,12 +57,43 @@ const Feedback: React.FC = () => {
             </Col>
             <Col span={12}></Col>
           </Row>
-          <Alert title="Dialog 弹窗, 基础用法通过一个变量控制弹窗展示，还可以通过openDialog来打开一个弹窗" />
+          <Alert title="Dialog 弹窗, 两种用法，基础用法通过一个变量控制弹窗展示，还可以通过openDialog来打开一个弹窗" />
           <Row>
-            <Col span={12}>
-              <Button type="primary">todo</Button>
+            <Col span={24}>
+              <JDialog></JDialog>
             </Col>
-            <Col span={12}></Col>
+          </Row>
+          <Alert title="drawer 常规用法，没有命令模式" />
+          <Row>
+            <Col span={24}>
+              <JDrawer></JDrawer>
+            </Col>
+          </Row>
+          <Alert title="loading 多种玩法" />
+          <Row>
+            <Col span={24}>
+              <JLoading></JLoading>
+            </Col>
+          </Row>
+          <Alert title="Placeholder 占位块" />
+          <Row>
+            <Col span={24}>
+              {/* @ts-ignore */}
+              <Placeholder.RichTextBlock rows={4} />
+              {/* @ts-ignore */}
+              <Placeholder.RichTextBlock
+                rows={7}
+                shape="rect"
+                size={160}
+                dashed={false}
+              />
+            </Col>
+          </Row>
+          <Alert title="Sweetalert 弹窗，不支持自定义，相当于element中的confirm弹窗，多用于二次确认" />
+          <Row>
+            <Col span={24}>
+              <Button onClick={showAlertInfo}>消息对话框</Button>
+            </Col>
           </Row>
         </Grid>
       </ConfigProvider>
