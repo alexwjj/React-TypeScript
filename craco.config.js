@@ -10,18 +10,9 @@ module.exports = {
 			'@assets': pathResolve('src/assets'),
 			'@components': pathResolve('src/components'),
 		},
-		module: {
-			rules: [{
-				test: /\.md$/i,
-				use: "raw-loader"
-			}]
-		},
 	},
 	module: {
-		rules: [{
-			test: /\.md$/i,
-			use: "raw-loader"
-		}]
+		rules: []
 	},
 	plugins: [{
 		plugin: CracoLessPlugin,

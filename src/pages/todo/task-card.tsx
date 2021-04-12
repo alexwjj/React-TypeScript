@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Card, Button } from "zent";
-import { ITask } from "./types";
+// import { ITask } from "./types";
 import { TASK_BTN_TEXT } from "./constants";
 
-interface IProps extends ITask {
-  date?: string;
-}
+// interface IProps extends ITask {
+//   date?: string;
+// }
 
 function TaskCardItem(props) {
   const onStatusChange = React.useCallback(() => {
