@@ -37,7 +37,7 @@ class LeftNav extends Component<LeftNavProps, {}> {
 			if (item.children) {
 				// const cItem = item.children.find((cItem) => path.indexOf(cItem.key) === 0);
 				// if (cItem) {
-					this.openKey = item.key;
+					// this.openKey = item.key;
 				// }
 			}
 		});
