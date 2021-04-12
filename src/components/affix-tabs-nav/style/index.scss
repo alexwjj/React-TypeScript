@@ -1,0 +1,44 @@
+@import "vars/colors";
+
+.zent-affix.rc__affix-tabs-nav__wrap {
+  @include theme-color(background-color, stroke, 9);
+
+  .zent-tabs-nav {
+    height: 48px;
+    line-height: 48px;
+    border: none;
+  }
+
+  .zent-tabs-nav-content {
+    .zent-tabs-tab {
+      @include theme-border-right(1px, solid, stroke, 6);
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+
+  .zent-tabs-tab,
+  .zent-tabs-tab-inner {
+    border: none;
+  }
+
+  .zent-tabs-tab-inner {
+    height: 48px;
+    line-height: 48px;
+    font-weight: 500;
+  }
+
+  .zent-tabs-tab__actived {
+    @include theme-color(color, primary, 4);
+
+    .zent-tabs-tab-inner {
+      border: none;
+    }
+  }
+
+  &--pined {
+    @include theme-border-bottom(1px, solid, stroke, 6);
+  }
+}

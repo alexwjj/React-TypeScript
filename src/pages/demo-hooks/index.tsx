@@ -5,6 +5,7 @@ import CallbackDemo from "./useCallback";
 import ContextDemo from "./useContext";
 import ReducerDemo from "./useReducer";
 import UseRouter from "./useRouter";
+import UseRef from "./useRef";
 // import useTime from "./useHooks.ts";
 // Hooks.defaultProps = {
 //   title: 'wjj'
@@ -66,6 +67,12 @@ function Hooks(props) {
 
       <Alert
         className="mt10"
+        title="useRef"
+        description="用习惯了vue的ref，react中的ref稍有不同"
+      ></Alert>
+      <UseRef></UseRef>
+      <Alert
+        className="mt10"
         title="自定义Hooks"
         description="基于原有的一些hooks可以进行进一步的封装"
       ></Alert>
@@ -73,10 +80,8 @@ function Hooks(props) {
         点击测试useTime, 获取最新事件
       </Button>
       <div>{time}</div> */}
-
     </div>
   );
 }
-
 
 export default Hooks;

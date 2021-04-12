@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Card, Button } from "zent";
 // import { ITask } from "./types";
-import { TASK_BTN_TEXT } from "./constants";
+import { TASK_BTN_TEXT, TASK_BTN_STYLE } from "./constants";
 
 // interface IProps extends ITask {
 //   date?: string;
@@ -18,7 +18,12 @@ function TaskCardItem(props) {
         title={props.task.title}
         type="nested"
         action={
-          <Button bordered={false} onClick={onStatusChange}>
+          <Button
+            outline
+            bordered={false}
+            onClick={onStatusChange}
+            type={TASK_BTN_STYLE[props.task.status]}
+          >
             {TASK_BTN_TEXT[props.task.status]}
           </Button>
         }

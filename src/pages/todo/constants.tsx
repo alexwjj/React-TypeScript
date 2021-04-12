@@ -9,3 +9,9 @@ export const TASK_BTN_TEXT =  {
     1: '点击完成',
     2: '查看详情'
 }
+
+export const TASK_BTN_STYLE =  {
+    0: 'warning',
+    1: 'success',
+    2: 'primary'
+}
