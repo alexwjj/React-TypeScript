@@ -6,7 +6,7 @@
   "dependencies": {
     "@ant-design/pro-form": "^1.13.6",
     "@antv/data-set": "^0.11.8",
-    "@craco/craco": "^5.6.4",
+    "@craco/craco": "^5.9.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -44,6 +44,7 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "react-syntax-highlighter": "^15.4.3",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-react-hook": "^4.0.3",
