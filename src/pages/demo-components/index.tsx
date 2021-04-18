@@ -3,14 +3,13 @@ import "./index.less";
 // import s from "./style.module.css";
 
 import React from "react";
-import { BlockHeader, Alert } from "zent";
+import { BlockHeader, Alert, Notify } from "zent";
 import AffixTabsNav from "../../components/affix-tabs-nav";
 import ContentTitle from "../../components/content-title";
 import VipIcon from "../../components/vip-icon";
-
+import AppCard from "../../components/app-card";
 
 function ScrmComponent() {
-
   const tabsProps = {
     stretch: true,
     tabs: [
@@ -26,6 +25,27 @@ function ScrmComponent() {
       },
     ],
   };
+  const onAppClick = () => {
+    Notify.info("appcard被点击");
+  };
+  const list = [
+    {
+      title: "app卡片标题1",
+      desc: "app卡片描述信息1111",
+      icon:
+        "https://img01.yzcdn.cn/upload_files/2021/04/14/Fjumo6k-YcHhLVs_-XHHuyZn2sjH.png",
+      href: "www.youzan.com",
+      onClick: onAppClick,
+    },
+    {
+      title: "app卡片标题2",
+      desc: "app卡片描述信息2222",
+      icon:
+        "https://img01.yzcdn.cn/upload_files/2021/04/14/FijAV5lSau2S97W7Bj8wCNl0YCfs.png",
+      href: "www.youzan.com",
+      onClick: onAppClick,
+    },
+  ];
   return (
     <div className="scrm-components">
       <Alert
@@ -50,8 +70,19 @@ function ScrmComponent() {
         affixProps={{ offsetTop: 0 }}
         tabsProps={tabsProps}
       />
-      <BlockHeader title="图钉和tab的封装"></BlockHeader>
-
+      <BlockHeader title="应用中心-appcard组件封装"></BlockHeader>
+      {list.map((item, index) => {
+        return (
+          <AppCard
+            key={index}
+            title={item.title}
+            desc={item.desc}
+            icon={item.icon}
+            href={item.href}
+            onClick={item.onClick}
+          />
+        );
+      })}
     </div>
   );
 }
