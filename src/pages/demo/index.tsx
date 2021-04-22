@@ -2,6 +2,7 @@ import React from "react";
 import LifeCycle from "./lifeCycle";
 import { Button, Alert, BlockLoading } from "zent";
 import "./index.less";
+import Test from './test';
 
 // 定义 LifeCycle 组件的父组件
 
@@ -40,6 +41,9 @@ export default class LifeCycleContainer extends React.Component {
     return (
       <>
         <Alert title="控制台展示父子组件生命周期的过程" />
+        <Test>
+          <div> 组件嵌套 </div>
+        </Test>
         <div className="fatherContainer">
           <Button onClick={this.changeText} type="primary">
             修改父组件文本内容
