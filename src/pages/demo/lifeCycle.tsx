@@ -40,7 +40,7 @@ export default class LifeCycle extends React.Component<IProps, any> {
   getSnapshotBeforeUpdate(prevProps: any, prevState: any) {
     console.log("getSnapshotBeforeUpdate方法执行");
 
-    return "haha";
+    return "componentDidUpdated的第三个参数";
   }
 
   // 组件更新后调用

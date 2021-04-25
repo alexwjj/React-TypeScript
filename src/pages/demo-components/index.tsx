@@ -4,10 +4,10 @@ import "./index.less";
 
 import React from "react";
 import { BlockHeader, Alert, Notify } from "zent";
-import AffixTabsNav from "../../components/affix-tabs-nav";
-import ContentTitle from "../../components/content-title";
-import VipIcon from "../../components/vip-icon";
-import AppCard from "../../components/app-card";
+import AffixTabsNav from "@/components/affix-tabs-nav";
+import ContentTitle from "@/components/content-title";
+import VipIcon from "@/components/vip-icon";
+import AppCard from "@/components/app-card";
 
 function ScrmComponent() {
   const tabsProps = {
