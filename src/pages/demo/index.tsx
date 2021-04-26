@@ -2,6 +2,7 @@ import React from "react";
 import LifeCycle from "./lifeCycle";
 import { Button, Alert, BlockLoading } from "zent";
 import "./index.less";
+// import TestLoading from "./test-loading";
 // import Test from './test';
 
 // 定义 LifeCycle 组件的父组件
@@ -40,6 +41,8 @@ export default class LifeCycleContainer extends React.Component {
   render() {
     return (
       <>
+        {/* <Alert title="测试HOC withLoading" />
+        <TestLoading></TestLoading> */}
         <Alert title="控制台展示父子组件生命周期的过程" />
         <div className="fatherContainer">
           <Button onClick={this.changeText} type="primary">

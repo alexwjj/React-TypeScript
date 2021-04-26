@@ -6,6 +6,7 @@ import ContextDemo from "./useContext";
 import ReducerDemo from "./useReducer";
 import UseRouter from "./useRouter";
 import UseRef from "./useRef";
+import withLogger from "./withLogger";
 // import useTime from "./useHooks.ts";
 // Hooks.defaultProps = {
 //   title: 'wjj'
@@ -84,4 +85,4 @@ function Hooks(props) {
   );
 }
 
-export default Hooks;
+export default withLogger("DIY：")(Hooks);

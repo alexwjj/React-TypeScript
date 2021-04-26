@@ -9,6 +9,7 @@ import ContentTitle from "@/components/content-title";
 import VipIcon from "@/components/vip-icon";
 import AppCard from "@/components/app-card";
 
+
 function ScrmComponent() {
   const tabsProps = {
     stretch: true,
