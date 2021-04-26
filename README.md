@@ -1,9 +1,27 @@
+<p align="center">
+  <img width="120" src="https://alexwjj.github.io/logo.png">
+</p>
+
+<p align="center">
+  <a href="https://alexwjj.github.io/study">
+    <img src="https://img.shields.io/github/stars/alexwjj/react-ts" alt="react-ts">
+  </a>
+  <a href="https://react.docschina.org/">
+    <img src="https://img.shields.io/badge/react-16.13.1-brightgreen" alt="react">
+  </a>
+</p>
+
+![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3f46c5cabc554d65b48b3bc4a80ee9c4~tplv-k3u1fbpfcp-watermark.image)
+
 # 个人学习项目
-- 尝试各种技术
+
+- 尝试各种技术
 - 等项目搞复杂了，再搞搞优化
 - 基础代码源于[MFinnnne/react-admin](https://github.com/MFinnnne/react-admin-server)
-- 交流学习：[俊劫的个人博客](https://alexwjj.github.io/) 欢迎扫码加V
+- 交流学习：[俊劫的个人博客](https://alexwjj.github.io/) 欢迎扫码加 V
+
 ## 技术栈
+
 - React
 - TypeScript
 - Zent
@@ -11,6 +29,7 @@
 - 微服务 - qiankun (TODO)
 
 ## 启动
+
 ```js
 yarn //安装依赖
 
@@ -21,13 +40,17 @@ yarn build //打包
 
 ## 输出文章
 
-- [vue转react不完全指北](https://juejin.cn/post/6953482028188860424) 已完成
+### [vue 转 react 不完全指北](https://juejin.cn/post/6953482028188860424) 已完成
+
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/93320594dfea45bd955c28f074fe9733~tplv-k3u1fbpfcp-watermark.image)
+
 - react 基础
 - react hooks
 - typescript 从入门到无敌
-- node bff开发实战
+- node bff 开发实战
 
 ## QA
 
-### 1、项目无法启动，提示craco 版本过低
-删除本地node_modules,重新安装
+### 1、项目无法启动，提示 craco 版本过低
+
+删除本地 node_modules,重新安装
