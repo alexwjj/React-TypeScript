@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="120" src="https://alexwjj.github.io/logo.png">
+  <img width="120" src="https://alexwjj.github.io/img/logo.png">
 </p>
 
 <p align="center">
@@ -8,6 +8,9 @@
   </a>
   <a href="https://react.docschina.org/">
     <img src="https://img.shields.io/badge/react-16.13.1-brightgreen" alt="react">
+  </a>
+  <a href="https://youzan.github.io/zent/zh/guides/install">
+    <img src="https://img.shields.io/badge/zent-9.4.0-yellowgreen" alt="zent">
   </a>
 </p>
 
@@ -40,12 +43,15 @@ yarn build //打包
 
 ## 输出文章
 
-### [vue 转 react 不完全指北](https://juejin.cn/post/6953482028188860424) 已完成
+### 1、[vue 转 react 不完全指北](https://juejin.cn/post/6953482028188860424) 已完成
 
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/93320594dfea45bd955c28f074fe9733~tplv-k3u1fbpfcp-watermark.image)
 
-- react 基础
-- react hooks
+### 2、[一名 vueCoder 总结的 React 基础](https://juejin.cn/post/6960556335092269063) 已完成
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2d96f20fe5b94c52ae7224e2df821b2d~tplv-k3u1fbpfcp-watermark.image)
+
+
+- react hooks Doing
 - typescript 从入门到无敌
 - node bff 开发实战
 
