@@ -1,11 +1,3 @@
-/*
- * @Descripttion:
- * @version:
- * @Author: alexwjj
- * @Date: 2020-10-14 21:16:42
- * @LastEditors: alexwjj
- * @LastEditTime: 2021-01-23 23:57:31
- */
 export interface MenuConfig {
   title: string;
   key: string;

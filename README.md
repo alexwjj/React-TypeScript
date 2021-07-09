@@ -43,16 +43,17 @@ yarn build //打包
 
 ## 输出文章
 
-### 1、[vue 转 react 不完全指北](https://juejin.cn/post/6953482028188860424) 已完成
+### 1、[vue 转 react 不完全指北](https://juejin.cn/post/6953482028188860424) 已完成 2021-4-21
 
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/93320594dfea45bd955c28f074fe9733~tplv-k3u1fbpfcp-watermark.image)
 
-### 2、[一名 vueCoder 总结的 React 基础](https://juejin.cn/post/6960556335092269063) 已完成
+### 2、[一名 vueCoder 总结的 React 基础](https://juejin.cn/post/6960556335092269063) 已完成 2021-5-10
 ![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2d96f20fe5b94c52ae7224e2df821b2d~tplv-k3u1fbpfcp-watermark.image)
 
+### 3、[一篇够用的TypeScript总结](https://juejin.cn/post/6981728323051192357) 已完成 2021-7-6
+![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e8c0a52167474efda5eeb47f8cdb1cbb~tplv-k3u1fbpfcp-watermark.image)
 
 - react hooks Doing
-- typescript 从入门到无敌
 - node bff 开发实战
 
 ## QA
@@ -60,3 +61,7 @@ yarn build //打包
 ### 1、项目无法启动，提示 craco 版本过低
 
 删除本地 node_modules,重新安装
+
+### 2、craco配置别名不生效
+
+需要在tsconfig中也配置下，因为别名会经过ts编译
