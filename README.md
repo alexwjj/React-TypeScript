@@ -66,3 +66,5 @@ yarn build //打包
 ### 2、craco配置别名不生效
 
 需要在tsconfig中也配置下，因为别名会经过ts编译
+
+tag test
