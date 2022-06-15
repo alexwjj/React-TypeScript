@@ -11,6 +11,9 @@ module.exports = {
 			'@components': pathResolve('src/components'),
 		},
 	},
+	resolve:{
+    extensions:['.js','.jsx','.json']
+},
 	module: {
 		rules: []
 	},

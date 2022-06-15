@@ -123,6 +123,7 @@ function AffixTabsNav<T extends React.ReactText>(props: IProps<T>): React.ReactE
     return () => {
       window.removeEventListener('scroll', throttledHandler);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setActiveId, tabsProps, offset]);
 
   // props 处理

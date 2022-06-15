@@ -17,7 +17,6 @@
 ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3f46c5cabc554d65b48b3bc4a80ee9c4~tplv-k3u1fbpfcp-watermark.image)
 
 # 个人学习项目
-测试下
 
 - 尝试各种技术
 - 等项目搞复杂了，再搞搞优化
@@ -67,4 +66,6 @@ yarn build //打包
 
 需要在tsconfig中也配置下，因为别名会经过ts编译
 
-tag test
+
+### 2022-06-15更新
+ - 启动craco会报错，原因使用了cnpm i ，使用yarn安装即可解决，记得先删除包
